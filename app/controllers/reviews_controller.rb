@@ -5,20 +5,28 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = Review.all
+    @attractions = Attraction.all
+    @users = User.all
   end
 
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    @attractions = Attraction.all
+    @users = User.all
   end
 
   # GET /reviews/new
   def new
     @review = Review.new
+    @attractions = Attraction.all
+    @users = User.all
   end
 
   # GET /reviews/1/edit
   def edit
+    @attractions = Attraction.all
+    @users = User.all
   end
 
   # POST /reviews
@@ -67,8 +75,9 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :author_id, :content, :attraction_id)
+      params.require(:review).permit(:title, :user_id, :content, :attraction_id)
     end
 end
