@@ -17,7 +17,7 @@
 
 <p>
   <strong>Attraction:</strong>
-  <%= @review.attraction.name %>
+  <% if @review.attraction_id != nil %><%= @review.attraction.name %> <% else %> <%= "(No associated attraction)" %><% end %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |

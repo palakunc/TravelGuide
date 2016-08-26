@@ -75,7 +75,6 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:title, :user_id, :content, :attraction_id)
