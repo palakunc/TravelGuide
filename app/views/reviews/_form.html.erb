@@ -5,6 +5,7 @@
     <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
     <%= f.input :title %>
     <%= f.input :content %>
+    <%= f.input :image, label: "Upload an image" %>
     <%= f.association :attraction, as: :select, prompt: "Select an attraction." %>
   </div>
 
